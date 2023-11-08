@@ -1,5 +1,6 @@
 <?php
 
+require_once 'autoloader.php'; //registro do autoloader para carregar classes em todo o código
 include 'livro.php';
 include 'biblioteca.php';
 
