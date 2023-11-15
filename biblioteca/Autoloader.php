@@ -5,13 +5,13 @@ function myAutoloader($className) {
     // array associativo para mapear nomes das classes para seus respectivos arquivos
     $classMap = [
         'CamadaModel' => 'models/CamadaModel.php',
-        'CamadaVisao' => 'view/CamadaVisao.php',
+        'CamadaView' => 'view/CamadaView.php',
         'CamadaController' => 'controller/CamadaController.php',
         // Adicionar mais classes e diretórios conforme necessário
     ];
 
     if (array_key_exists($className, $classMap)) {
-        include $classMap[$className];
+        require_once $classMap[$className];
     }
 }
 //registro do autoloader

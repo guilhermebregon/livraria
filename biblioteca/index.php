@@ -1,8 +1,6 @@
 <?php
 
 require_once 'autoloader.php'; //registro do autoloader para carregar classes em todo o código
-include 'livro.php';
-include 'biblioteca.php';
 
 try {
     $db = new PDO('mysql:host=localhost;dbname=livraria', 'root', 'Jesus100%');
@@ -24,8 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-
-<div style="width: 400px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livrecas</title>
+</head>
+<body>
+    <!-- Your HTML content here -->
+    <div style="width: 400px;">
     <form action="index.php" method="POST">
         <fieldset>
             <legend>Cadastre seu livro aqui</legend>
@@ -41,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </fieldset>
     </form>
 </div>
-
 <?php
 
 // $biblioteca->cadastrarLivro("Autor 1", "Título 1");
@@ -51,3 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $biblioteca->exibirLivros();
 
 ?>
+</body>
+</html>
+
+

@@ -7,10 +7,15 @@ class Biblioteca {
         $this->db = $db;
     }
 
-    
+    public function cadastrarLivro($autor, $titulo) {
+        $stmt = $this->db->prepare("INSERT INTO livros (autor, titulo) VALUES (:autor, :titulo)");
+        $stmt->bindParam(':autor', $autor);
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->execute();
+    }
 
     public function exibirLivros() {
-        // Query the database to retrieve all book records from the 'livros' table
+        // Faz um query para a base para puxar todos os registros de livros da tabela 'livros'
         $stmt = $this->db->query("SELECT autor, titulo FROM livros");
         
         // Fetch the result set as an associative array

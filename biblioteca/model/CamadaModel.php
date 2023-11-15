@@ -4,36 +4,11 @@
 class CamadaModel {
     //estabelecer a conexão com o banco dentro do componente
     private $db;
-    private $num1;
-    private $num2;
-
+    
     public function __construct()
     {
         $this->db = new PDO('mysql:host=localhost;dbname=livraria', 'root', 'Jesus100%');
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $this->num1 = 0;
-        $this->num2 = 0;
-    }
-
-        public function getNum1() {
-        return $this->num1;
-    }
-
-    public function setNum1($num1) {
-        $this->num1 = $num1;
-    }
-
-    public function getNum2() {
-        return $this->num2;
-    }
-
-    public function setNum2($num2) {
-        $this->num2 = $num2;
-    }
-
-    public function soma() {
-        return $this->num1 + $this->num2;
     }
 
     public function cadastrarLivro($autor, $titulo) {
